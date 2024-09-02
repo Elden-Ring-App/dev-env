@@ -3,14 +3,14 @@ services:
     image: mongo:latest
     container_name: MongoDB
     environment:
-      MONGO_INITDB_ROOT_USERNAME: pjnp
-      MONGO_INITDB_ROOT_PASSWORD: soufoda
+      MONGO_INITDB_ROOT_USERNAME: ${USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
     ports:
-      - 27017:27017
+      - ${PORT}:${PORT}
     volumes:
       - ./data/db:/data/db
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://pjnp:soufoda@localhost:27017/ --quiet
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://${USERNAME}:${PASSWORD}@${URL}:${PORT}/ --quiet
       interval: 30s
       timeout: 10s
       retries: 5
