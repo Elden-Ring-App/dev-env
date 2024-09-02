@@ -16,8 +16,9 @@ services:
       retries: 5
       start_period: 30s
 
-#  my-app:
-#    image: my-app-image
-#    depends_on:
-#      mongo:
-#        condition: service_healthy
+  python-script:
+    build: .
+    container_name: python-script-container
+    depends_on:
+      mongo:
+        condition: service_healthy
