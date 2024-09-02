@@ -1,24 +1,25 @@
 services:
   mongo:
     image: mongo:latest
-    container_name: my-mongo-container
+    container_name: MongoDB
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: pjnp
+      MONGO_INITDB_ROOT_PASSWORD: soufoda
     ports:
       - 27017:27017
     volumes:
       - ./data/db:/data/db
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://pjnp:soufoda@localhost:27017/ --quiet
+      interval: 30s
+      timeout: 10s
       retries: 5
-      start_period: 30s
 
-  python-script:
-    build: .
-    container_name: python-script-container
+  data:
+    build: ./Data-Insertion
+    container_name: Data-Inserter
+    env_file:
+      - .env
     depends_on:
       mongo:
         condition: service_healthy
