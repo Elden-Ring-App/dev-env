@@ -1,0 +1,25 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: MongoDB
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./data/db:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://${USERNAME}:${PASSWORD}@${URL}:${PORT}/ --quiet
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  data:
+    build: ./Data-Insertion
+    container_name: Data-Inserter
+    env_file:
+      - .env
+    depends_on:
+      mongo:
+        condition: service_healthy

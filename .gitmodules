@@ -1,0 +1,3 @@
+[submodule "Data-Insertion"]
+	path = Data-Insertion
+	url = git@github.com:Elden-Ring-App/Data-Insertion.git
