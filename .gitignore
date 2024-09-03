@@ -4,6 +4,8 @@ data
 
 .env
 
-Data-Insertion
+Data-Insertion/
 
 .DS_Store
+
+.venv
