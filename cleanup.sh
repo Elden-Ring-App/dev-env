@@ -19,6 +19,3 @@ if [ -d "./data/db" ]; then
 else
     echo "./data/db directory does not exist. Skipping cleanup."
 fi
-
-echo "Rebuilding and starting Docker Compose services..."
-docker compose up --build
