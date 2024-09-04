@@ -21,10 +21,12 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 
 1. Go to your terminal
 2. Enter the dev-env folder
-3. **(Recommended)** Run `docker volume prune -f`
-4. **(Recommended)** Run `docker system prune -f`
-5. **(Recommended)** Run `docker image prune -f`
-6. **(Optional)** Run `docker compose down` to bring down all docker compose services running, don't do this if you have any that you don't want to stop. 
-7. **(Recommended)** Run `-rf ./data/db/*` To erase the DB that has the game information, if you don't when running this a second time the DB will have duplicated data
-8. Run `compose up --build`
-9. Should be working!
+3. **(Only needed 1º time  on the device)** Run `git submodule update --init --recursive`
+4. Run `git submodule update --remote --merge`
+5. **(Recommended)** Run `docker volume prune -f`
+6. **(Recommended)** Run `docker system prune -f`
+7. **(Recommended)** Run `docker image prune -f`
+8. **(Optional)** Run `docker compose down` to bring down all docker compose services running, don't do this if you have any that you don't want to stop. 
+9. **(Recommended)** Run `-rf ./data/db/*` To erase the DB that has the game information, if you don't when running this a second time the DB will have duplicated data
+10. Run `compose up --build`
+11. Should be working!
