@@ -28,4 +28,3 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 7. **(Recommended)** Run `-rf ./data/db/*` To erase the DB that has the game information, if you don't when running this a second time the DB will have duplicated data
 8. Run `compose up --build`
 9. Should be working!
-
