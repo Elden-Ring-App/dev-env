@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Updating submodules to the latest version..."
+git submodule update --init --recursive
+git submodule update --remote --merge
+
 echo "Pruning Docker volumes..."
 docker volume prune -f
 
