@@ -13,6 +13,10 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 4. Then run this one `./startup.sh`
 5. Should be working!
 
+#### NOTE
+
+* The `./cleanup.sh` will do the same but without launching the app, will only clean docker, will also need the to run `chmod +x cleanup.sh` before you use it
+
 ### With docker compose (Should work with every system)
 
 1. Go to your terminal
@@ -24,3 +28,4 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 7. **(Recommended)** Run `-rf ./data/db/*` To erase the DB that has the game information, if you don't when running this a second time the DB will have duplicated data
 8. Run `compose up --build`
 9. Should be working!
+
