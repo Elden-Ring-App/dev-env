@@ -9,9 +9,10 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 
 1. Go to your terminal
 2. Enter the dev-env folder
-3. Run the following command `chmod +x startup.sh`
-4. Then run this one `./startup.sh`
-5. Should be working!
+3. Run `git submodule update --init --recursive`
+4. Run  `chmod +x startup.sh`
+5. Then run this one `./startup.sh`
+6. Should be working!
 
 #### NOTE
 
