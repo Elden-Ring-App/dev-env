@@ -28,6 +28,5 @@ The data from the game came from this dataset: [Ultimate Elden Ring with Shadow 
 6. **(Recommended)** Run `docker system prune -f`
 7. **(Recommended)** Run `docker image prune -f`
 8. **(Optional)** Run `docker compose down` to bring down all docker compose services running, don't do this if you have any that you don't want to stop. 
-9. **(Recommended)** Run `-rf ./data/db/*` To erase the DB that has the game information, if you don't when running this a second time the DB will have duplicated data
 10. Run `compose up --build`
 11. Should be working!
