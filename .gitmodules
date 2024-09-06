@@ -1,6 +1,6 @@
 [submodule "Data-Insertion"]
 	path = Data-Insertion
-	url = git@github.com:Elden-Ring-App/Data-Insertion.git
+	url = https://github.com/Elden-Ring-App/Data-Insertion.git
 [submodule "backend"]
 	path = backend
-	url = git@github.com:Elden-Ring-App/backend.git
+	url = https://github.com/Elden-Ring-App/backend.git
