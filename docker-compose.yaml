@@ -12,7 +12,7 @@ services:
     networks:
       - app_network
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://${USERNAME}:${PASSWORD}@${URL}:${MONGO_PORT}/ --quiet
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://${USERNAME}:${PASSWORD}@${MONGO_URL}:${MONGO_PORT}/ --quiet
       interval: 30s
       timeout: 10s
       retries: 5
